@@ -17,12 +17,12 @@ Softwarequalitätsmanagement
 Software testen (Geschwindigkeit, Aussehen, Case-Studies)
 
 ##### **Service Monitoring**
-Überwachen des Serverstatuses (Console output (sample code most for Linux/Ubuntu Setup, Node.js, other plugins)
+Überwachen des Serverstatus (Console output (sample code most for Linux/Ubuntu Setup, Node.js, other plugins)
 
 ##### **Business Active Monitoring** 
-Sammlung von Analysen der Prozesse ( Pakete gepackt, ausgeliefert, versendet , Anzahl der Retouren im laufenden Zeitraum 
+Sammlung von Analysen der Prozesse (Pakete gepackt, ausgeliefert, versendet, Anzahl der Retouren im laufenden Zeitraum 
 Bsp.: Realtime Total Sales
-auf uns bezogen bedeutet es erst mal ein Ziel Festzulegen  (die Funktionen der Software festzulegen) 
+auf uns bezogen bedeutet es erst mal ein Ziel festzulegen  (die Funktionen der Software festzulegen) 
 
 ##### **Netzwerkmonitoring**
 Unter Netzwerk-Monitoring versteht man die Überwachung und regelmäßige Kontrolle von Netzwerken, deren Hardware (z.B. Server, Router, Switches) 
@@ -39,19 +39,19 @@ Beim aktiven Monitoring werden zusätzliche Pakete in das Netz gesendet, beim pa
 
 * Bestandsaufnahme dessen, was heute gesammelt wird.
 * Analysieren von Bestandserfassung von Metriken mit Fragen wie: "Warum erfassen wir diese nicht? Wie passt das zu unseren Zielen? Haben wir jemals einen Fehler in X gesehen? Wie oft sollten wir das messen? Wie lange sollen wir es behalten?
-* Die Teams sollten bewerten, wie sie die Informationen erfassen, und den besten architektonischen Ansatz für die Erfassung ihrer Metriken in Betracht ziehen, einschließlich der Frage, ob Pull-, Push- oder Pull- Erfassungsmethoden besser sind.(Im Pull-System beginnen die Produktionsaufträge mit dem Erreichen eines bestimmten Lagerbestands, während im Push-System die Produktion nach Bedarf beginnt.)
+* Die Teams sollten bewerten, wie sie die Informationen erfassen, und den besten architektonischen Ansatz für die Erfassung ihrer Metriken in Betracht ziehen, einschließlich der Frage, ob Pull-, Push- oder Pull-Erfassungsmethoden besser sind.(Im Pull-System beginnen die Produktionsaufträge mit dem Erreichen eines bestimmten Lagerbestands, während im Push-System die Produktion nach Bedarf beginnt.)
 
 ##### **Schritte 2: Correlate and Triage**
 
-Daten kommen mit unterschiedlichen Frequenzen, in unterschiedlichen Zeitrahmen und aus unterschiedlichen Quellen an. Deswegen braucht man:
+Daten kommen mit unterschiedlichen Frequenzen, in unterschiedlichen Zeitrahmen und aus unterschiedlichen Quellen an. Dementsprechend man braucht:
 * Arbeit an Normalisierung von Daten, um sie zu verstehen.
 * Auswertung mit den verschiedenen eingehenden Metriken durchzuführen.
 * Daten in Perspektive setzen und in Beziehung sie zu Projektzielen stellen.
 
 ##### **Schritt 3:Trends identifizieren**
 
-* Trends identifizieren um Maßnahmen zu ergreifen, bevor Probleme auftreten.
-* Festlegen von thresholds und Sicherheit’s thresholds für jede der Komponenten zusammen, die sich möglicherweise auf das Serviceangebot auswirken können. 
+* Trends identifizieren, um Maßnahmen zu ergreifen, bevor Probleme auftreten.
+* Festlegen von thresholds und Sicherheit thresholds für jede der Komponenten zusammen, die sich möglicherweise auf das Serviceangebot auswirken können. 
 * Ergebnisse mit Teams und Geschäftsbereichsleitern kommunizieren,  Probleme bei der Servicebereitstellung vermeiden und Angebote basierend auf identifizierten Trends optimieren.
 
 ##### **Schritt 4: Benachrichtigen und handeln (Automatisierung)**
@@ -74,11 +74,11 @@ auf Testbasis / Freetrail:
 
 ## **Prometheus Vorstellung** 
 
-1- Prometheus Server bezieht sich auf 3 Komponenten : 
+1- Prometheus Server bezieht sich auf 3 Komponenten: 
 
-* Retrieval - Zieht Metriken in Datenformat von Applicationen, Servers , Services etc
-* Storage - Ein Datenbank Komponent zum Storage von Metriken 
-* HTTP Server - akzeptiert Queries . 
+* Retrieval - Zieht Metriken in Datenformat von Applikationen, Servers, Services etc.
+* Storage - Ein Datenbank Komponente zum Storage von Metriken 
+* HTTP Server - akzeptiert Queries. 
 
 ![Prometheus Architektur](/media/oldUploads/Diagram_von_Juljano_Aliaj.png)
 
@@ -91,16 +91,16 @@ auf Testbasis / Freetrail:
 * z.B.: Für Windows Server ein Target kann CPU-Status, Memory usage etc, sein.
       Für eine Applikation sind : Number of exeptions, Number of Requests , Request Duration 
      (Latency)
-* Die Einheit von einem Target ist letzendlich ein Metrik. 
+* Die Einheit von einem Target ist letztendlich ein Metrik. 
        
 4- Metrische Einträge sind: Type und Help Attribute
-* Help - Bezeichnung von dem in der Datenbank Komponent gespeicherten Metrik
+* Help - Bezeichnung von dem in der Datenbank Komponente gespeicherten Metrik
 * Type - Ein von 3 Metrik Typen  
-    * Typ 1 - Counter : Wie oft ist "das" passiert? z.B.: Nummer von Exeptions die das App  
+    * Typ 1 - Counter: Wie oft ist "das" passiert? z.B.: Nummer von Exceptions, die das App  
              hatte, Nummer von Requests etc .
-    * Typ 2 - Gague : Was ist die aktuelle Wert? Z.B: Kapazität von CPU, Nummer von 
-             aktuellen Requests , Kapazität von Disk Space etc . 
-    * Typ 3 - Histogram : Verfolgen wie lang oder wie größ? Z.B.: die Größe oder der Dauer 
+    * Typ 2 - Gague : Was ist der aktuelle Wert? z. B.: Kapazität von CPU, Nummer von 
+             aktuellen Requests, Kapazität von Disk Space etc. 
+    * Typ 3 - Histogramm : Verfolgen wie lang oder wie groß? z.B.: die Größe oder der Dauer 
              eines Requests.
 
 5- Pulling Data from Servers:
@@ -117,13 +117,14 @@ Sobald der jeweilige Exporter-Endpunkt zur Prometheus-Konfiguration hinzugefügt
 Mithilfe von Client-libraries kann man Scraping-Endpunkte verfügbar machen und verschiedene Metriken bereitstellen, die auf diesem Endpunkt relevant sind.
 *All dies wird in prometheus.yml (Konfigurationsdatei) konfiguriert, sodass man definieren können, welches target Prometheus in welchem Intervall entschlüsseln soll.
 
+
 7 - Prometheus verwendet dann einen Diensterkennungsmechanismus, um diese Zielendpunkte zu finden. Wenn Prometheus zum ersten Mal heruntergeladen und installiert wird, wird eine Beispielkonfigurationsdatei mit einigen Standardwerten angezeigt. 
 
 ![Prometheus Config](/media/img/../../../media/img/Monitoring/prometheus_config.png)
 
-* global : bezeichnet Wie oft entschlüßelt Prometheus seine Targets und und man kan dies mit seine eigene Targets überschreiben.
-* rule _file: Bestimmt den Speicherort aller Regeln, die der Prometheus-Server laden soll. Die Regeln dienen im Wesentlichen entweder zum aggregieren von Metrikregeln oder zum Erstellen von Warnungen, wenn eine Bedingung erfüllt ist, genutzt. Sollte die CPU-Auslastung beispielsweise 80% erreichen. Prometheus verwendet also Regeln, um neue Zeitreiheneinträge zu erstellen und Warnungen zu generieren. Die globale Konfiguration definiert dann, wie oft Prometheus diese Regeln auswertet.
-* Die letzte Blockscrape-configuration steuert, welche Ressourcen Prometheus überwacht, hier kann man die Targets definieren. Da Prometheus über eigene Metrik-Endpunkte verfügt, um seine eigenen Daten verfügbar zu machen, kann es seinen eigenen Zustand überwachen. In dieser Standardkonfiguration wird also ein einzelner Job namens Prometheus verwendet, der die vom Prometheus-Server bereitgestellten Metriken entschlüsselt, sodass sein einzelnes Target auf localhost 9090 liegt. Prometheus stellt dann Metriken zur Verfügung, die auf einem Pfad "/metrics" verfügbar sind, bei dem es sich um einen Standardpfad handelt, der für diesen Endpunkt konfiguriert ist . 
+* global : bezeichnet wie oft entschlüsselt Prometheus seine Targets und man kann dies mit seinen eigenen Targets überschreiben.
+* rule _file: Bestimmt den Speicherort aller Regeln, die der Prometheus-Server laden soll. Die Regeln dienen im Wesentlichen entweder zum Aggregieren von Metrikregeln oder zum Erstellen von Warnungen, wenn eine Bedingung erfüllt ist, genutzt. Sollte die CPU-Auslastung beispielsweise 80% erreichen? Prometheus verwendet also Regeln, um neue Zeitreiheneinträge zu erstellen und Warnungen zu generieren. Die globale Konfiguration definiert dann, wie oft Prometheus diese Regeln auswertet.
+* Die letzte Blockscrape-configuration steuert, welche Ressourcen Prometheus überwacht, hier kann man die Targets definieren. Da Prometheus über eigene Metrik-Endpunkte verfügt, um seine eigenen Daten verfügbar zu machen, kann es seinen eigenen Zustand überwachen. In dieser Standardkonfiguration wird also ein einzelner Job namens Prometheus verwendet, der die vom Prometheus-Server bereitgestellten Metriken entschlüsselt, sodass sein einzelnes Target auf localhost 9090 liegt. Prometheus stellt dann Metriken zur Verfügung, die auf einem Pfad "/metrics" verfügbar sind, bei dem es sich um einen Standardpfad handelt, der für diesen Endpunkt konfiguriert ist. 
 * Anschließend kann man einen anderen Job erstellen und beispielsweise aus der globalen Konfiguration überschreiben, dann die Hostadresse des Targets identifizieren.
 
 8- Wie löst Prometheus Warnungen aus, die durch Regeln definiert sind und wer sie empfängt?
