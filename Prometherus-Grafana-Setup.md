@@ -42,7 +42,7 @@ In die *scrape_configs* werden Jobs bzw Targest definiert. Automatisch wird hier
 Der *job_name* ist hierbei ein Tag, in unserem Fall "node_exporter", für Pull-Metriken von unseren Wildau Servers. Die Targets werden dann mittels IP des Servers und seines eigenständigen Ports zur Ermittlung dieser Metriken festgelegt. 
 
 ## **Start der Anwendung**
-Nach angepasste Konfiguration starten wir die Anwendung durch *prometheus.exe*. Aus ihren Output geht hervor, dass die  Konfigurations­datei erfolgreich geladen wurde und dass die Anwendung auf Port 9090 hört.
+Nach angepasste Konfiguration starten wir die Anwendung durch *prometheus.exe*. Aus ihrem Output geht hervor, dass die  Konfigurations­datei erfolgreich geladen wurde und dass die Anwendung auf Port 9090 hört.
 
 ![Prometheus_Port](media/img/oldUploads/Prometheus_Port.PNG)
 ![Prometheus_Starten](media/img/oldUploads/Prometheus_Starten.PNG)
@@ -59,7 +59,7 @@ Nach *Execute* kann die Ausgabe über die Console oder durch einen Graphen mit z
 
 <img align="center" src="https://prometheus.io/assets/blog/2019-10-08/10kseries8hours-2.12.png">
 
-Da diese Graphen Rudimentär sind empfielt Prometheus-Community für Dashboards Erstellung die Verwendung von Grafana. Prometheus wird dann nur als Pull-Collector genutzt. 
+Da diese Graphen rudimentär sind, empfielt Prometheus-Community für Dashboards Erstellung die Verwendung von Grafana. Prometheus wird dann nur als Pull-Collector genutzt. 
 
 # **WMI Exporter**
 
@@ -95,14 +95,14 @@ Gehen wir zu unserer Konfigurationsdatei (meine befindet sich unter C:\Users\dev
 Wir speichern die Datei und starten den Prometheus-Dienst (prometheus.exe) neu.
 Kehren wir zur Prometheus-Benutzeroberfläche zurück und wählen wir die Registerkarte "**Targets**", um sicherzustellen, dass Prometheus ordnungsgemäß mit dem WMI-Exporter verbunden ist. Wenn die folgende Fehlermeldung "*context deadline exeeded*" angezeigt wird, muss  sichergestellt werden, dass das Scrape-Timeout in der Konfigurationsdatei festgelegt ist.
 
-Wenn alles soweit ist und die Servers in config Datei eingetragen wurden, kann man die Instanzen überprüffen und ihre entsprechenden Metriken in Prometheus UI auf Status/Targets ausrufen.
+Wenn alles so weit ist und die Servers in config Datei eingetragen wurden, kann man die Instanzen überprüffen und ihre entsprechenden Metriken in Prometheus UI auf Status/Targets ausrufen.
 
 ![Targets](media/img/oldUploads/Targets.PNG)
 
 # **Grafana Setup**
 
 ## **Grafana Herunterladen**
-Um das Windows Version von Grafana herunterzuladen muss man auf [Grafana Website](https://grafana.com/grafana/download?platform=windows) die aktuellen Datei *grafana-7.0.6.windows-amd64.msi* für Windows ausrufen.
+Um das Windows Version von Grafana herunterzuladen, muss man auf [Grafana Website](https://grafana.com/grafana/download?platform=windows) die aktuelle Datei *grafana-7.0.6.windows-amd64.msi* für Windows ausrufen.
 Wenn das Herunterladen fertig ist, kann man einfach das MSI-Installationsprogramm ausführen.
 
 ![grafana-msio](media/img/oldUploads/grafana-msio.png)
@@ -110,7 +110,7 @@ Wenn das Herunterladen fertig ist, kann man einfach das MSI-Installationsprogram
 ## **Grafana Installation**
 * Klicken Sie auf „**Weiter**“.
 * Akzeptieren Sie die Bedingungen der Lizenzvereinbarung und klicken Sie auf „**Weiter**“.
-Sicher gestellt werden muss, dass das Grafana OSS (der Grafana-Server) und die Grafana als ein Service-Option korrekt ausgewählt sind.
+Sichergestellt werden muss, dass das Grafana OSS (der Grafana-Server) und die Grafana als ein Service-Option korrekt ausgewählt sind.
 * Wenn dies der Fall ist: Klicken Sie auf "**Weiter**" und auf "**Installieren**".
 Zu diesem Zeitpunkt sollte die Grafana-Installation beginnen.
 Wenn irgendwann zu einer Firewall-Ausnahme aufgefordert wird, muss Grafana autorisiert werden, Änderungen an dem System vorzunehmen.
@@ -135,7 +135,7 @@ Für mich steht die Konfigurations datei unter *C:\Users\devopsadmin\grafana\con
 Wir gehen in das Verzeichnis `conf` und kopieren `sample.ini` in `custom.ini`. 
 
 `Hinweis:` Man sollte `custom.ini` bearbeiten, niemals `defaults.ini`.
-Wir bearbeiten die Datei `custom.ini`, kommentieren die Konfigurationsoption `http_port` aus (; ist das Kommentarzeichen in INI-Dateien) und ändern sie in `8080` oder ähnliches. Dieser Port sollte keine zusätzlichen Windows-Berechtigungen erfordern.
+Wir bearbeiten die Datei `custom.ini`, kommentieren die Konfigurationsoption `http_port` aus (';'  ist das Kommentarzeichen in INI-Dateien) und ändern sie in `8080` oder ähnliches. Dieser Port sollte keine zusätzlichen Windows-Berechtigungen erfordern.
 
 ![http_port](media/oldUploads/http_port.PNG)
 
@@ -150,7 +150,7 @@ Dies ist der Bildschirm, den wir sehen sollten.
 
 In Grafana sind die Standardanmeldeinformationen standardmäßig *admin* (als Benutzername) und *admin* (als Kennwort).
 
-Nach dem Login werden wir im nächsten Fenster aufgefordert, unser Passwort zu ändern. Man kann ein ein sicheres Passwort wählen, um Sicherheitsverletzungen zu vermeiden.
+Nach dem Einloggen werden wir im nächsten Fenster aufgefordert, unser Passwort zu ändern. Man kann ein sicheres Passwort wählen, um Sicherheitsverletzungen zu vermeiden.
 
 Wenn fertig, klicken wir auf **„Speichern“**.
 
@@ -214,7 +214,7 @@ groups:
        severity: 'critical'
 ```
 
-Zusammenfassend heißt es, dass die Warnung ausgelöst wird, wenn eine der Instanzen für eine Minute ausfällt (up == 0).
+Zusammengefasst heißt es, dass die Warnung ausgelöst wird, wenn eine der Instanzen für eine Minute ausfällt (up == 0).
 Sobald wir rules.yml bereit haben, müssen wir die Datei mit prometheus.yml verknüpfen und eine Warnkonfiguration hinzufügen. Unser prometheus.yml wird folgendermaßen aussehen:
 
 ```yml
@@ -263,7 +263,7 @@ Man kann **Webhooks** erstellen, die im Wesentlichen Adressen für externe Quell
 Infolgedessen sendet Prometheus die Warnung an die Webhook-Adresse und sie wird in unserem Slack-Kanal angezeigt.
 
 Um einen Slack-Webhook zu erstellen, gehen wir zu unserer [Slack App Seite](https://api.slack.com/apps) und klicken wir oben rechts "**Create New App**".
-Geben wir die Name unseres neuen Apps und bestätigen unsere Slack Workspace.
+Geben wir der Name unseres neuen Apps und bestätigen unsere Slack Workspace.
 
 ![create_new_app](media/img/oldUploads/create_new_app.PNG)
 
@@ -276,7 +276,7 @@ Wählen wir ein Slack-Channel, wo diese App Benachrichtigungen posten kann und k
 
 ![Slack_channel](media/img/oldUploads/Slack_channel.PNG)
 
-Jetzt sehen wir das ein neues Webhook für diese App zuständig ist . Das werden wir zur unseren weiteren Konfigurationen auf Prometheus Alertmanager brauchen .
+Jetzt sehen wir das ein neues Webhook für diese App zuständig ist. Das werden wir zu unseren weiteren Konfigurationen auf Prometheus Alertmanager brauchen.
 
 ![webhook](media/img/oldUploads/webhook.PNG)
 
